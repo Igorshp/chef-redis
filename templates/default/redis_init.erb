@@ -34,8 +34,8 @@ PIDFILE=<%= @pidfile %>
 CONF="<%= @conf_dir %>/<%= @name %>.conf"
 
 <% if node.platform_family == "debian" %>
-ulimit -Hn <%= node.redis.ulimit %>
 ulimit -Sn <%= node.redis.ulimit %>
+ulimit -Hn <%= node.redis.ulimit %>
 <% end %>
 
 case "$1" in
